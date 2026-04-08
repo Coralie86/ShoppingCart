@@ -1,0 +1,64 @@
+.shop{
+    margin: 30px 200px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 2fr));
+    gap: 10px;
+}
+
+.cardShop{
+    min-width: 250px;
+    max-width: 20vw;
+    display: flex;
+    flex-direction: column;
+    justify-self: center;
+    padding: 10px 20px;
+    background-color: rgb(222, 231, 222);
+    border-radius: 10px;
+}
+
+img{
+    width: 100%;
+}
+
+.qtyAddbtn{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    gap:40px;
+}
+
+.addCartBtn{
+    font-size: 12px;
+    padding: 5px 10px;
+    border-radius: 5px;
+    background-color:rgb(29, 126, 85);
+    border: 2px solid rgb(10, 56, 10);
+    color: white;
+}
+
+.addCartBtn:hover{
+    cursor: pointer;
+    box-shadow: 0px 0px 4px rgb(116, 179, 137);
+}
+
+.qtyInput{
+    width: 5vw;
+}
+
+.labelInput{
+    display: flex;
+    gap: 5px;
+}
+
+.itemTitle{
+    text-align: center;
+}
+
+.itemDescription{
+    font-size: 12px;
+    color:rgb(100, 100, 100);
+}
+
+.itemPrice{
+    margin: 5px 0px 10px;
+}

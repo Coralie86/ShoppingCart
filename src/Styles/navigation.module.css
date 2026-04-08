@@ -1,0 +1,27 @@
+.nav{
+    display: flex;
+    align-items:center;
+    justify-content: space-between;
+    padding:0px 200px;
+    background-color: rgb(29, 126, 85);
+    color: white;
+    font-family: system-ui, 'Segoe UI', Roboto, sans-serif;;
+}
+
+.btns{
+    display: flex;
+    gap: 5vw;
+}
+
+.navBtn{
+    border: none;
+    background-color:  rgb(29, 126, 85);
+    color: white;
+    font-size: 18px;
+    padding-bottom: 5px;
+}
+
+.navBtn:hover{
+    border-bottom: 2px solid white;
+    cursor: pointer;
+}
