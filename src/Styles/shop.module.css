@@ -1,12 +1,12 @@
 .shop{
     margin: 30px 200px;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 2fr));
+    grid-template-columns: repeat(auto-fit, minmax(310px, 2fr));
     gap: 10px;
 }
 
 .cardShop{
-    min-width: 250px;
+    min-width: 290px;
     max-width: 20vw;
     display: flex;
     flex-direction: column;
@@ -17,7 +17,7 @@
 }
 
 img{
-    width: 100%;
+    width: 90%;
 }
 
 .qtyAddbtn{
@@ -42,7 +42,15 @@ img{
 }
 
 .qtyInput{
-    width: 5vw;
+    width: 30px;
+    text-align: center;
+    border: 1px solid rgb(21, 51, 15);
+}
+
+.qtyInput[type=number]::-webkit-inner-spin-button,
+.qtyInput[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
 }
 
 .labelInput{
@@ -61,4 +69,42 @@ img{
 
 .itemPrice{
     margin: 5px 0px 10px;
+}
+
+.qtySection{
+    display: flex;
+}
+
+.plusQty{
+    border: 1px solid rgb(21, 51, 15);
+    border-left: none;
+    padding: 0px 5px;
+}
+
+.minusQty{
+    border: 1px solid rgb(21, 51, 15);
+    border-right: none;
+    padding: 0px 6px;
+}
+
+.plusQty:hover, .minusQty:hover{
+    cursor: pointer;
+    box-shadow: 0px 0px 3px rgb(21, 51, 15);
+}
+
+.caroussel{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.previous, .next {
+    width: 30px;
+}
+
+.previous:hover, .next:hover {
+    cursor: pointer;
+    background-color: rgb(175, 207, 177);
+    border-radius: 10px;
 }

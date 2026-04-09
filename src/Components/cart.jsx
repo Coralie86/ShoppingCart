@@ -21,6 +21,32 @@ export default function Cart(){
         }))
     }
 
+    function decreaseQty(e){
+        const itemTargeted = parseInt(e.target.id.split("_")[1]);
+        setCart(cart.map(item => {
+            if(item.id === itemTargeted){
+                return {
+                    ...item, qty: item.qty - 1
+                }
+            } else {
+                return item
+            }
+        }))
+    }
+
+    function increaseQty(e){
+        const itemTargeted = parseInt(e.target.id.split("_")[1]);
+        setCart(cart.map(item => {
+            if(item.id === itemTargeted){
+                return {
+                    ...item, qty: item.qty +1
+                }
+            } else {
+                return item
+            }
+        }))
+    }
+
     function handleRemove(e){
         const itemTargetedId = parseInt(e.target.id.split("_")[1]);
         setCart(cart.filter(item => item.id !== itemTargetedId )) ;
@@ -28,7 +54,7 @@ export default function Cart(){
 
     if(cart.length === 0){
         return (
-            <div>
+            <div className={style.emptyCart} > 
                 <h1>Your Cart is currently empty!</h1>
                 <Link to="/ShoppingCart/shop">
                     You can go back to the shop page by clicking here, though!
@@ -43,7 +69,7 @@ export default function Cart(){
                 {
                     cart.map(item => {
                         return(
-                            <CartCard key={item.id} item ={item} onChange={onChange} handleRemove={handleRemove} />
+                            <CartCard key={item.id} item ={item} onChange={onChange} handleRemove={handleRemove} increaseQty={increaseQty} decreaseQty={decreaseQty} />
                         )
                     })
                 }
@@ -53,7 +79,7 @@ export default function Cart(){
     )
 }
 
-function CartCard({item, onChange, handleRemove}){
+function CartCard({item, onChange, handleRemove, increaseQty, decreaseQty}){
     return(
         <div className={style.cartCard}>           
             <img src={item.images[1]} className={style.imgCart}/>
@@ -62,7 +88,12 @@ function CartCard({item, onChange, handleRemove}){
                 <p className={style.cardPrice}>{item.price + "€"}</p>
                 <p className={style.totalCard}>{"Subtotal: " + Math.round(item.price * item.qty *100) / 100 + "€"}</p>
                 <div className={style.qtyAddbtn}>
-                    <input id={"input_"+item.id} type="number" className={style.qtyInput} value={item.qty} onChange={onChange} />                          
+                    <div className={style.qtySection}>
+                        <div id={"minus_"+item.id} className={style.minusQty} onClick={decreaseQty} >-</div>
+                        <input id={"input_"+item.id} aria-label="quantity" type="number" className={style.qtyInput} value={item.qty} onChange={onChange} />
+                        <div id={"plus_"+item.id} className={style.plusQty} onClick={increaseQty} >+</div>
+                    </div>
+                    {/* <input id={"input_"+item.id} type="number" className={style.qtyInput} value={item.qty} onChange={onChange} />                           */}
                     <button id={"btn_"+item.id} onClick={handleRemove} className={style.removeCartBtn}>REMOVE</button>
                 </div>
             </div>

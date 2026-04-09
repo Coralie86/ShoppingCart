@@ -1,3 +1,37 @@
-/* div{
-    color: red;
-} */
+body{
+    font-family: system-ui, 'Segoe UI', Roboto, sans-serif;
+}
+.home{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 15vh 40vh;
+}
+
+.home > h1 {
+    font-size: 40px;
+}
+
+
+.textHome{
+    margin-top: 40px;
+    font-size: 20px;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.goShopbtn{
+    /* height: 30px; */
+    font-size: 20px;
+    border-radius: 10px;
+    padding: 10px;
+    background-color:rgb(29, 126, 85);
+    border: 2px solid rgb(10, 56, 10);
+    color: white;
+}
+
+.goShopbtn:hover{
+    cursor:pointer;
+    box-shadow: 0px 0px 4px rgb(44, 80, 55);
+}
