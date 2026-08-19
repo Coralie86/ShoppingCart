@@ -1,8 +1,8 @@
 .shop{
     margin: 30px 200px;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(310px, 2fr));
-    gap: 10px;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 2fr));
+    gap: 20px;
 }
 
 .cardShop{
@@ -14,6 +14,10 @@
     padding: 10px 20px;
     background-color: rgb(222, 231, 222);
     border-radius: 10px;
+}
+
+.cardShop:hover {
+    border: 2px solid white;
 }
 
 img{
@@ -44,7 +48,8 @@ img{
 .qtyInput{
     width: 30px;
     text-align: center;
-    border: 1px solid rgb(21, 51, 15);
+    border: 1px solid rgb(29, 126, 85);
+    border-radius: 5px;;
 }
 
 .qtyInput[type=number]::-webkit-inner-spin-button,
@@ -63,7 +68,8 @@ img{
 }
 
 .itemDescription{
-    font-size: 12px;
+    font-size: 14px;
+    line-height: 20px;
     color:rgb(100, 100, 100);
 }
 
@@ -76,13 +82,15 @@ img{
 }
 
 .plusQty{
-    border: 1px solid rgb(21, 51, 15);
+    border: 1px solid rgb(29, 126, 85);
+    border-radius: 5px;
     border-left: none;
     padding: 0px 5px;
 }
 
 .minusQty{
-    border: 1px solid rgb(21, 51, 15);
+    border: 1px solid rgb(29, 126, 85);
+    border-radius: 5px;
     border-right: none;
     padding: 0px 6px;
 }
@@ -107,4 +115,10 @@ img{
     cursor: pointer;
     background-color: rgb(175, 207, 177);
     border-radius: 10px;
+}
+
+@media (max-width: 1000px) {
+    .shop {
+        margin: 30px 10px;
+    }
 }

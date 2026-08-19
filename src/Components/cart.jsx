@@ -107,7 +107,7 @@ function Payment({cartList}){
     return(
         <div className={style.orderSummary}>
             <h1 className={style.summary}>Order Summary</h1>
-            <p className={style.total} >{"Total: " + total + "€"}</p>
+            <p className={style.total} >{"Total: " + parseFloat(total, 2).toFixed(2) + "€"}</p>
             <button className={style.payment}>PAYMENT</button>
         </div>
     )

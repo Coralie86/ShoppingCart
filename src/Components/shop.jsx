@@ -4,12 +4,15 @@ import { useOutletContext } from "react-router";
 import { CartContext, CartSetContext } from "./cartContext";
 import chevronLeft from "../assets/chevron-left.svg"
 import chevronRight from "../assets/chevron-right.svg"
+import Toast from "./toastAddCart";
 
 export default function Shop(){
     const [items, setItems] = useState([]);
     const [error, setError] = useState(null);
     const cart = useContext(CartContext);
     const setCart = useContext(CartSetContext);
+    const [toast, setToast] = useState(false);
+    console.log(cart)
 
     useEffect(() => {
         let isMounted = true;
@@ -49,14 +52,29 @@ export default function Shop(){
     function handleAddCart(e){
         const itemTargetedId = parseInt(e.target.id.split("_")[1]);
         const itemTargeted = items.find(item => item.id === itemTargetedId)
-        setCart([...cart, {
+        if(cart.find(item => item.id == itemTargetedId)) {
+            
+            setCart(cart.map(item => {
+                if(item.id === itemTargetedId){
+                    console.log("here")
+                    return {
+                        ...item, qty: item.qty + itemTargeted.qty
+                    }
+                } else {
+                    return item
+                }
+            }))
+        } else {
+            setCart([...cart, {
             id: itemTargeted.id,
             images: itemTargeted.images,
             title: itemTargeted.title,
             description: itemTargeted.description,
             price: itemTargeted.price,
             qty: itemTargeted.qty
-                    }])        
+                    }])
+        }        
+        setToast(true);      
     }
 
     function onChange(e){
@@ -108,10 +126,8 @@ export default function Shop(){
         for(let index = 0; index < item.images.length; index++){
             if(sourceImg.includes(item.images[index])){
                 if(index === item.images.length-1){
-                    console.log("here")
                     currentImg.src = item.images[0]
                 } else {
-                    console.log("there")
                     currentImg.src = item.images[index + 1]
                 }
             }
@@ -135,9 +151,11 @@ export default function Shop(){
         }
     }
 
-    console.log(items)
-
     return(
+        <>
+        {toast && 
+        <Toast text="Item added to Cart" onClose={() => setToast(false)} />
+        }
         <div className={style.shop}>
                 {items.map(item => {
                     return (
@@ -157,8 +175,8 @@ export default function Shop(){
                     </div>
                     )                   
                 })}
-        </div>      
-
+        </div>    
+    </>
     )
 }
 

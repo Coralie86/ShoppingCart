@@ -3,25 +3,44 @@
     align-items:center;
     justify-content: space-between;
     padding:0px 200px;
-    background-color: rgb(29, 126, 85);
+    /* background-color: rgb(29, 126, 85); */
+    background: radial-gradient(ellipse, rgb(29, 126, 85) 0%,  rgb(40, 167, 114) 75%, rgb(49, 214, 145) 100%);
     color: white;
-    font-family: system-ui, 'Segoe UI', Roboto, sans-serif;;
+    font-family: "Inter";
 }
 
 .btns{
     display: flex;
+    align-items: center;
     gap: 5vw;
 }
 
 .navBtn{
     border: none;
-    background-color:  rgb(29, 126, 85);
+    background-color:  rgba(29, 126, 86, 0);
     color: white;
-    font-size: 18px;
+    font-size: 24px;
     padding-bottom: 5px;
+    font-family: "Inter";
 }
 
 .navBtn:hover{
     border-bottom: 2px solid white;
     cursor: pointer;
+}
+
+@media (max-width: 1000px) {
+    .nav {
+        padding: 0px 20px;
+        height: 10vh;
+        gap: 10px;
+    }
+    .nav h1 {
+        font-size: 28px;
+        text-align: center;
+    }
+    .navBtn{
+        font-size: 20px;
+        padding: 0px;
+    }
 }

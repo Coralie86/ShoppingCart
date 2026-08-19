@@ -3,6 +3,14 @@ html{
     background-color: rgb(200, 207, 200);
 }
 
+.cartSection{
+    display: flex;
+    align-items: top;
+    justify-content: center;
+    height: 320px;
+    gap: 10vw;
+}
+
 .cart{
     display: flex;
     flex-direction: column;
@@ -33,13 +41,6 @@ html{
     width: 30px;
 }
 
-.cartSection{
-    display: flex;
-    align-items: top;
-    justify-content: center;
-    height: 320px;
-    gap: 10vw;
-}
 
 .orderSummary{
     display: flex;
@@ -91,12 +92,14 @@ html{
 
 .plusQty{
     border: 1px solid rgb(21, 51, 15);
+    border-radius: 5px;
     border-left: none;
     padding: 0px 5px;
 }
 
 .minusQty{
     border: 1px solid rgb(21, 51, 15);
+    border-radius: 5px;
     border-right: none;
     padding: 0px 6px;
 }
@@ -110,6 +113,7 @@ html{
     width: 30px;
     text-align: center;
     border: 1px solid rgb(21, 51, 15);
+    border-radius: 5px;
 }
 
 .qtyInput[type=number]::-webkit-inner-spin-button,
@@ -122,4 +126,18 @@ html{
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin: 15vh 0px;
+}
+
+@media (max-width: 1000px){
+    .cartSection{
+        display: flex;
+        flex-direction: column;
+        /* align-items: top; */
+        justify-content: left;
+        gap: 10vw;
+    }
+    .emptyCart{
+        text-align: center;
+    }
 }
