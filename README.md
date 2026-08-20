@@ -1,16 +1,76 @@
-# React + Vite
+# Shopping Cart
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# Shopping Cart
 
-Currently, two official plugins are available:
+A mock online shop built with React. Users can browse products, add items to their cart, adjust quantities, and view their cart in real time.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+This project was built as part of [The Odin Project](https://www.theodinproject.com/lessons/node-path-react-new-shopping-cart) React curriculum.
 
-## React Compiler
+## Features
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- Home, Shop and Cart pages
+- Client-side navigation with React Router
+- Products fetched from the Fake Store API
+- Product cards with:
+  - Product information
+  - Home made Image Carousel
+  - Quantity input
+  - Increment/decrement buttons
+  - Add to Cart button
+- Shopping cart with:
+  - Product quantities
+  - Quantity adjustment
+  - Item removal
+  - Real-time cart total
+- Cart item count displayed in the navigation bar
+- Responsive design
+- Automated tests with React Testing Library
 
-## Expanding the ESLint configuration
+## Technologies
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- React
+- React Router
+- JavaScript
+- CSS
+- React Testing Library
+- Vite
+
+## Learning Objectives
+
+This project was built to practice:
+
+- React component design
+- React Router
+- Managing shared application state
+- Handling user interactions
+- Working with external APIs
+- Building reusable components
+- Testing React applications
+- Responsive CSS
+- Deploying a React SPA
+
+## Getting Started
+
+### Prerequisites
+
+Make sure you have Node.js and npm installed.
+
+### Installation
+
+npm install
+
+### Testing
+
+npm test
+
+## Live Demo
+
+https://coralie86.github.io/ShoppingCart/shop
+
+## Credits
+
+Credits
+
+Project idea and requirements: The Odin Project: https://www.theodinproject.com/
+
+Product data: Fake Store API: https://dummyjson.com/products/category/smartphones
