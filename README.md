@@ -1,7 +1,5 @@
 # Shopping Cart
 
-# Shopping Cart
-
 A mock online shop built with React. Users can browse products, add items to their cart, adjust quantities, and view their cart in real time.
 
 This project was built as part of [The Odin Project](https://www.theodinproject.com/lessons/node-path-react-new-shopping-cart) React curriculum.
