@@ -17,7 +17,6 @@ export default function Navigation(){
                     <Link to="/ShoppingCart/shop"><button className={style.navBtn} >SHOP</button></Link>
                     <Link to="/ShoppingCart/cart"><BtnCart /></Link>
                 </div>
-                {console.log("navigation re-render")}
             </div>
             <Outlet />
         </>

@@ -12,7 +12,6 @@ export default function Shop(){
     const cart = useContext(CartContext);
     const setCart = useContext(CartSetContext);
     const [toast, setToast] = useState(false);
-    console.log(cart)
 
     useEffect(() => {
         let isMounted = true;
